@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tracker</string>
+    <string name="btnWorkout">workout</string>
+    <string name="btnFood">food</string>
+    <string name="btnWorkoutPrograms">programs</string>
+    <string name="btnWorkoutToday">today</string>
+    <string name="btnWorkoutHistory">history</string>
+    <string name="carbs">carbohydrates</string>
+    <string name="protein">protein</string>
+    <string name="fat">fat</string>
+    <string name="productsOverview">Overview</string>
+</resources>
