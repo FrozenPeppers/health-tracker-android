@@ -1,12 +1,11 @@
-package nl.jorisebbelaar.tracker
+package nl.jorisebbelaar.tracker.activity
 
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_food.*
-import kotlinx.android.synthetic.main.activity_main.*
+import nl.jorisebbelaar.tracker.R
 import org.eazegraph.lib.models.PieModel
 
 class FoodActivity : AppCompatActivity() {

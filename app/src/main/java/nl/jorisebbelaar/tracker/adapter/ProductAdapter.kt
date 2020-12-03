@@ -1,23 +1,20 @@
 package nl.jorisebbelaar.tracker.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_product.view.*
 import nl.jorisebbelaar.tracker.R
 import nl.jorisebbelaar.tracker.model.Product
-import org.w3c.dom.Text
 
-class ProductAdapter(private val products: List<Product>) :
+class ProductAdapter(private val products: List<Product>, private val listener: (Product) -> Unit) :
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_product,
+                R.layout.item_products,
                 parent,
                 false
             )
@@ -29,19 +26,21 @@ class ProductAdapter(private val products: List<Product>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(products[position])
+        val product = products[position]
+        holder.bind(product)
+        holder.itemView.setOnClickListener{listener(product)}
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        private val tvAmount: TextView = itemView.findViewById(R.id.tvAmmount)
-        private val tvName: TextView = itemView.findViewById(R.id.tvName)
-        private val tvKcal: TextView = itemView.findViewById(R.id.tvKcal)
+        private val label: TextView = itemView.findViewById(R.id.stat_1)
+        private val kcal: TextView = itemView.findViewById(R.id.stat_2)
+        private val btn: Button = itemView.findViewById(R.id.stat_3)
 
-        fun bind(product: Product) {
-            tvAmount.text = product.amount.toString() + " x"
-            tvName.text = product.name
-            tvKcal.text = product.kcal.toString() + " kcal"
+        fun bind(products: Product) {
+            label.text = products.name
+            kcal.text = products.kcal.toString() + " Kcal"
         }
     }
+
 }

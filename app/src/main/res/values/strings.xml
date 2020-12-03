@@ -9,4 +9,6 @@
     <string name="protein">protein</string>
     <string name="fat">fat</string>
     <string name="productsOverview">Overview</string>
+    <string name="fiber">fibers</string>
+    <string name="kcal">kcal</string>
 </resources>

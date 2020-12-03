@@ -1,7 +1,8 @@
-package nl.jorisebbelaar.tracker
+package nl.jorisebbelaar.tracker.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import nl.jorisebbelaar.tracker.R
 
 class WorkoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
