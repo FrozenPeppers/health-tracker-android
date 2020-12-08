@@ -1,9 +1,8 @@
-package nl.jorisebbelaar.tracker.activity
+package nl.jorisebbelaar.tracker.ui.product
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager

@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import nl.jorisebbelaar.tracker.R
-import nl.jorisebbelaar.tracker.model.ProductLog
+import nl.jorisebbelaar.tracker.model.Product
 
-class ProductLogAdapter(private val productLogs: List<ProductLog>) :
+class ProductLogAdapter(private val productLogs: List<Product>) :
     RecyclerView.Adapter<ProductLogAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -34,10 +34,11 @@ class ProductLogAdapter(private val productLogs: List<ProductLog>) :
         private val tvName: TextView = itemView.findViewById(R.id.tvName)
         private val tvKcal: TextView = itemView.findViewById(R.id.tvKcal)
 
-        fun bind(productLog: ProductLog) {
-            tvAmount.text = productLog.amount.toString() + " x"
-            tvName.text = productLog.product.name
-            tvKcal.text = productLog.product.kcal.toString() + " kcal"
+        fun bind(productLog: Product) {
+            tvAmount.text = productLog.ammount.toString()
+            tvName.text = productLog.name
+            tvKcal.text = productLog.kcal.toString()
+
         }
     }
 }

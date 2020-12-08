@@ -5,7 +5,7 @@
     android:id="@+id/activityProductsOverview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.ProductsOverviewActivity"
+    tools:context=".ui.product.ProductsOverviewActivity"
     tools:showIn="@layout/activity_products_overview">
 
     <androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package nl.jorisebbelaar.tracker.activity
+package nl.jorisebbelaar.tracker.ui.workout
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
