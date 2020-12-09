@@ -7,7 +7,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_product_detail.*
 import nl.jorisebbelaar.tracker.R
 import nl.jorisebbelaar.tracker.model.Product
-import nl.jorisebbelaar.tracker.ui.product_log.ProductLogViewModel
+import nl.jorisebbelaar.tracker.viewmodel.ProductViewModel
 import org.eazegraph.lib.models.PieModel
 import java.util.*
 

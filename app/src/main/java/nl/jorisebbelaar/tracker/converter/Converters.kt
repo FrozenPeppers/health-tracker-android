@@ -1,4 +1,4 @@
-package nl.jorisebbelaar.tracker
+package nl.jorisebbelaar.tracker.converter
 
 import androidx.room.TypeConverter
 import java.util.*

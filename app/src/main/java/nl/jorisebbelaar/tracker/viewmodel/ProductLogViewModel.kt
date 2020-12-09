@@ -1,4 +1,4 @@
-package nl.jorisebbelaar.tracker.ui.product_log
+package nl.jorisebbelaar.tracker.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

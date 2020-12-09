@@ -2,11 +2,10 @@ package nl.jorisebbelaar.tracker.database
 
 import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import nl.jorisebbelaar.tracker.Converters
+import nl.jorisebbelaar.tracker.converter.Converters
 import nl.jorisebbelaar.tracker.dao.ProductDao
 import nl.jorisebbelaar.tracker.dao.ProductLogDao
 import nl.jorisebbelaar.tracker.model.Product

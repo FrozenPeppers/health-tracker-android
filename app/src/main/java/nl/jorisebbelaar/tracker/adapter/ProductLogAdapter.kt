@@ -38,7 +38,6 @@ class ProductLogAdapter(private val productLogs: List<Product>) :
             tvAmount.text = productLog.ammount.toString()
             tvName.text = productLog.name
             tvKcal.text = productLog.kcal.toString()
-
         }
     }
 }

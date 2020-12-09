@@ -1,4 +1,4 @@
-package nl.jorisebbelaar.tracker.ui.product
+package nl.jorisebbelaar.tracker.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -19,6 +19,12 @@ class ProductViewModel(application: Application): AndroidViewModel(application) 
         ioScope.launch {
             productRepository.insertProduct(product)
 
+        }
+    }
+
+    fun deleteProduct(product: Product){
+        ioScope.launch {
+            productRepository.deleteProduct(product)
         }
     }
 
