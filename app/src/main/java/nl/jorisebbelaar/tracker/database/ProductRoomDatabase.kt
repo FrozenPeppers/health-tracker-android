@@ -7,16 +7,13 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import nl.jorisebbelaar.tracker.converter.Converters
 import nl.jorisebbelaar.tracker.dao.ProductDao
-import nl.jorisebbelaar.tracker.dao.ProductLogDao
 import nl.jorisebbelaar.tracker.model.Product
-import nl.jorisebbelaar.tracker.model.ProductLog
 
 @TypeConverters(Converters::class)
-@Database(entities = [Product::class, ProductLog::class], version = 27, exportSchema = false)
+@Database(entities = [Product::class], version = 28, exportSchema = false)
 abstract class ProductRoomDatabase : RoomDatabase() {
 
     abstract fun productDao(): ProductDao
-    abstract fun productLogDao(): ProductLogDao
 
     companion object {
         private const val DATABASE_NAME = "PRODUCT_DATABASE"
