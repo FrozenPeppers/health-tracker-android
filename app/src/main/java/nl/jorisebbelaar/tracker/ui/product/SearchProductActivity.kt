@@ -31,7 +31,6 @@ class SearchProductActivity : AppCompatActivity(), SearchView.OnQueryTextListene
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_product)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         rvSearchProduct.layoutManager =
             LinearLayoutManager(this@SearchProductActivity, RecyclerView.VERTICAL, false)
@@ -49,12 +48,10 @@ class SearchProductActivity : AppCompatActivity(), SearchView.OnQueryTextListene
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         getFood(query.toString())
-        println(query)
         return true
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-        println(newText)
         return true
     }
 
@@ -121,8 +118,7 @@ class SearchProductActivity : AppCompatActivity(), SearchView.OnQueryTextListene
                 }
 
             },
-            { println("no bueno") })
-
+            {})
         queue.add(stringRequest)
     }
 }

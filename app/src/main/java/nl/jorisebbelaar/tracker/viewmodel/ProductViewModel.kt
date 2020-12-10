@@ -8,12 +8,19 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import nl.jorisebbelaar.tracker.model.Product
 import nl.jorisebbelaar.tracker.repository.ProductRepository
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.util.*
 
 class ProductViewModel(application: Application): AndroidViewModel(application) {
     private val ioScope = CoroutineScope(Dispatchers.IO)
     private val productRepository = ProductRepository(application.applicationContext)
 
-    val products: LiveData<List<Product>> = productRepository.getAllProducts()
+    private var start = LocalDate.now().atStartOfDay()
+    private var end = LocalDate.now().atStartOfDay()
+
+    val products: LiveData<List<Product>> = productRepository.getAllProducts(convertToDateViaInstant(start), convertToDateViaInstant(end.plusHours(23)))
 
     fun insertProduct(product: Product) {
         ioScope.launch {
@@ -26,6 +33,14 @@ class ProductViewModel(application: Application): AndroidViewModel(application) 
         ioScope.launch {
             productRepository.deleteProduct(product)
         }
+    }
+
+    private fun convertToDateViaInstant(dateToConvert: LocalDateTime): Date {
+        return Date
+            .from(
+                dateToConvert.atZone(ZoneId.systemDefault())
+                    .toInstant()
+            )
     }
 
 }

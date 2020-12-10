@@ -14,6 +14,10 @@ import nl.jorisebbelaar.tracker.R
 import nl.jorisebbelaar.tracker.adapter.ProductLogAdapter
 import nl.jorisebbelaar.tracker.model.Product
 import nl.jorisebbelaar.tracker.viewmodel.ProductViewModel
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.util.*
 
 class ProductsOverviewActivity : AppCompatActivity() {
 
@@ -24,10 +28,10 @@ class ProductsOverviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products_overview)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         initViews()
         initViewModel()
+
     }
 
     private fun initViews() {

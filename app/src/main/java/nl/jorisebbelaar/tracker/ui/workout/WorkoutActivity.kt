@@ -9,6 +9,5 @@ class WorkoutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_workout)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

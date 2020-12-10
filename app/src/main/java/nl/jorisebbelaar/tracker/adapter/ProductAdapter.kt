@@ -38,7 +38,6 @@ class ProductAdapter(
 
         private val label: TextView = itemView.findViewById(R.id.stat_1)
         private val kcal: TextView = itemView.findViewById(R.id.stat_2)
-        private val btn: Button = itemView.findViewById(R.id.stat_3)
 
         fun bind(products: Product) {
             label.text = products.name

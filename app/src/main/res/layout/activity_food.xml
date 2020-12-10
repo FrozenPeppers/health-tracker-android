@@ -78,7 +78,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
-                        android:text="@string/protein" />
+                        android:text="@string/fat" />
 
                 </LinearLayout>
 
@@ -97,7 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
-                        android:text="@string/fat" />
+                        android:text="@string/protein" />
 
                 </LinearLayout>
 
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                android:text="Use of Programming Languages(In Percentage):"
+                android:text="Daily intake:"
                 android:textSize="23sp"
                 android:textStyle="bold" />
 
@@ -259,6 +259,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/details" />
-
+        app:layout_constraintTop_toTopOf="@+id/details"
+        />
 </RelativeLayout>

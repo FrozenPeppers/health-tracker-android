@@ -17,7 +17,6 @@ class ProductLogViewModel(application: Application) : AndroidViewModel(applicati
 
     fun insertProductLog(productLog: ProductLog) {
         ioScope.launch { productLogRepository.insertProductLog(productLog)
-        println("================================================================")
         }
     }
 }

@@ -1,8 +1,12 @@
 package nl.jorisebbelaar.tracker.ui.product
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_product_detail.*
 import nl.jorisebbelaar.tracker.R
@@ -18,7 +22,6 @@ class ProductDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_detail)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         viewModel = ProductViewModel(application)
 
@@ -54,10 +57,17 @@ class ProductDetailActivity : AppCompatActivity() {
         }
     }
 
+    private fun showToast() {
+        Toast.makeText(this, "succesfully added product", Toast.LENGTH_LONG).show()
+    }
+
     private fun addProductToLog(product: Product) {
         product.ammount = editTextField1.text.toString().toFloat()
         product.grams = editTextField2.text.toString().toFloat()
         viewModel.insertProduct(product)
+
+        showToast()
+        startActivity(Intent(this, ProductsOverviewActivity::class.java))
     }
 
     private fun calcRatio(product: Product?, amount: Float, grams: Int) {
