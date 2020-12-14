@@ -12,18 +12,41 @@
         android:id="@+id/rvProducts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnProductAdd"
+        app:layout_constraintBottom_toTopOf="@+id/linearlayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnProductAdd"
+    <LinearLayout
+        android:id="@+id/linearlayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="0dp"
-        android:background="#A4ABA4"
-        android:text="add"
-        app:icon="@drawable/baseline_add_24"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnProductAdd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="0dp"
+            android:layout_weight="0.5"
+            android:background="#A4ABA4"
+            android:text="add"
+            app:icon="@drawable/baseline_add_24"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <Space
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btnProductsOverview"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="0dp"
+            android:layout_weight="0.5"
+            android:background="#A4ABA4"
+            android:text="overview"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

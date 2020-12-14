@@ -3,10 +3,12 @@ package nl.jorisebbelaar.tracker.ui.food
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import kotlinx.android.synthetic.main.activity_food.*
+import nl.jorisebbelaar.tracker.MainActivity
 import nl.jorisebbelaar.tracker.R
 import nl.jorisebbelaar.tracker.model.Product
 import nl.jorisebbelaar.tracker.ui.product.ProductsOverviewActivity
@@ -22,15 +24,17 @@ class FoodActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food)
-
         initViews()
         initViewModel()
-
     }
 
     private fun initViews() {
         btnProductsOverview.setOnClickListener {
             startActivity(Intent(this, ProductsOverviewActivity::class.java))
+        }
+
+        btnHome.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
     }
@@ -58,7 +62,8 @@ class FoodActivity : AppCompatActivity() {
             fat += product.fat
         }
 
-        tvPiechartCarbs.text = kcal.toString()
+        tvPiechartKcal.text = kcal.toString()
+        tvPiechartCarbs.text = carbs.toString()
         tvPiechartProtein.text = protein.toString()
         tvPiechartFat.text = fat.toString()
 
@@ -89,5 +94,18 @@ class FoodActivity : AppCompatActivity() {
         )
 
         piechart.startAnimation()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_favorite -> {
+            startActivity(Intent(this, MainActivity::class.java))
+            true
+        }
+
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
     }
 }

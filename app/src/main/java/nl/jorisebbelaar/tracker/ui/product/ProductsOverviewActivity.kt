@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_products_overview.*
 import nl.jorisebbelaar.tracker.R
 import nl.jorisebbelaar.tracker.adapter.ProductLogAdapter
 import nl.jorisebbelaar.tracker.model.Product
+import nl.jorisebbelaar.tracker.ui.food.FoodActivity
 import nl.jorisebbelaar.tracker.viewmodel.ProductViewModel
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -46,6 +47,10 @@ class ProductsOverviewActivity : AppCompatActivity() {
         )
         btnProductAdd.setOnClickListener {
             startActivity(Intent(this, SearchProductActivity::class.java))
+        }
+
+        btnProductsOverview.setOnClickListener{
+            startActivity(Intent(this, FoodActivity::class.java))
         }
 
         createItemTouchHelper().attachToRecyclerView(rvProducts)

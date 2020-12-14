@@ -11,4 +11,6 @@
     <string name="productsOverview">Overview</string>
     <string name="fiber">fibers</string>
     <string name="kcal">kcal</string>
+    <string name="action_settings">settings</string>
+    <string name="action_home">home</string>
 </resources>
