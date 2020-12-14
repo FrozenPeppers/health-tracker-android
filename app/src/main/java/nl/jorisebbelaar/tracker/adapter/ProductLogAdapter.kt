@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import nl.jorisebbelaar.tracker.R
 import nl.jorisebbelaar.tracker.model.Product
 
-class ProductLogAdapter(private val productLogs: List<Product>) :
+class ProductLogAdapter(
+    private val productLogs: List<Product>,
+    private val listener: (Product) -> Unit
+) :
     RecyclerView.Adapter<ProductLogAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -25,7 +28,9 @@ class ProductLogAdapter(private val productLogs: List<Product>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(productLogs[position])
+        val product = productLogs[position]
+        holder.bind(product)
+        holder.itemView.setOnClickListener { listener(product) }
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,9 +40,10 @@ class ProductLogAdapter(private val productLogs: List<Product>) :
         private val tvKcal: TextView = itemView.findViewById(R.id.tvKcal)
 
         fun bind(productLog: Product) {
-            tvAmount.text = productLog.ammount.toString()
+            var ratio = (productLog.grams!! / 100.0) * productLog.ammount!!
+            tvAmount.text = productLog.ammount.toString() + " x"
             tvName.text = productLog.name
-            tvKcal.text = productLog.kcal.toString()
+            tvKcal.text = productLog.kcal.toString() + " kcal"
         }
     }
 }

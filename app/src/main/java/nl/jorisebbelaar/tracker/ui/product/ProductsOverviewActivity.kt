@@ -15,6 +15,7 @@ import nl.jorisebbelaar.tracker.adapter.ProductLogAdapter
 import nl.jorisebbelaar.tracker.model.Product
 import nl.jorisebbelaar.tracker.ui.food.FoodActivity
 import nl.jorisebbelaar.tracker.viewmodel.ProductViewModel
+import java.io.Serializable
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -23,7 +24,11 @@ import java.util.*
 class ProductsOverviewActivity : AppCompatActivity() {
 
     private val productList = arrayListOf<Product>()
-    private val productLogAdapter = ProductLogAdapter(productList)
+    private val productLogAdapter = ProductLogAdapter(productList) {product ->
+        var intent = Intent(this, ProductUpdateActivity::class.java)
+        intent.putExtra("product", product as Serializable)
+        startActivity(intent)
+    }
     private lateinit var viewModel: ProductViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

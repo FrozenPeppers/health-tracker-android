@@ -17,8 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="nl.jorisebbelaar.tracker.ui.workout.WorkoutActivity"></activity>
-        <activity android:name="nl.jorisebbelaar.tracker.ui.food.FoodActivity"></activity>
+        <activity android:name="nl.jorisebbelaar.tracker.ui.workout.WorkoutActivity" />
+        <activity android:name="nl.jorisebbelaar.tracker.ui.food.FoodActivity" />
         <activity android:name="nl.jorisebbelaar.tracker.ui.product.ProductsOverviewActivity">
             <meta-data
                 android:name="android.app.default_searchable"
@@ -29,7 +29,7 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity android:name="nl.jorisebbelaar.tracker.ui.product.ProductDetailActivity">
-        </activity>
+        <activity android:name="nl.jorisebbelaar.tracker.ui.product.ProductDetailActivity" />
+        <activity android:name=".ui.product.ProductUpdateActivity" />
     </application>
 </manifest>

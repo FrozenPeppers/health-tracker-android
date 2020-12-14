@@ -33,7 +33,7 @@ class FoodActivity : AppCompatActivity() {
             startActivity(Intent(this, ProductsOverviewActivity::class.java))
         }
 
-        btnHome.setOnClickListener{
+        btnHome.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
@@ -56,10 +56,11 @@ class FoodActivity : AppCompatActivity() {
         var fat = 0.0
 
         for (product in products) {
-            kcal += product.kcal
-            carbs += product.carbs
-            protein += product.protein
-            fat += product.fat
+            var ratio = (product.grams!! / 100.0) * product.ammount!!
+            kcal += product.kcal.times(ratio)
+            carbs += product.carbs.times(ratio)
+            protein += product.protein.times(ratio)
+            fat += product.fat.times(ratio)
         }
 
         tvPiechartKcal.text = kcal.toString()

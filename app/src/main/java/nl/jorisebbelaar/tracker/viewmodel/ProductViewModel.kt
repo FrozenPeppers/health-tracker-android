@@ -35,6 +35,12 @@ class ProductViewModel(application: Application): AndroidViewModel(application) 
         }
     }
 
+    fun updateProduct(product: Product){
+        ioScope.launch {
+            productRepository.updateProduct(product)
+        }
+    }
+
     private fun convertToDateViaInstant(dateToConvert: LocalDateTime): Date {
         return Date
             .from(
